@@ -32,7 +32,7 @@
 <body>
 
 	<div><%=10 + 20 %></div>
-	<!--  --><div><%=sum(10,20) %></div> 
+	<div><%=m.sum(10,20) %></div> 
 
 </body>
 </html>

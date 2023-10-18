@@ -12,13 +12,14 @@
 	String txt1 = request.getParameter("txt1");
 	
 	System.out.println(txt1==null);		//false
-	System.out.println(txt1.equals(""));	//true
+	//System.out.println(txt1.equals(""));	//true
 	
 	//암호 박스
 	String txt2 = request.getParameter("txt2");
 	
 	//다중 라인 텍스트 박스
 	String txt3 = request.getParameter("txt3");
+	if (txt3==null) txt3="";
 	txt3 = txt3.replace("\r\n", "<br>");
 	
 	//체크 박스
@@ -39,6 +40,30 @@
 	
 	//라디오 버튼
 	String rb = request.getParameter("rb");
+	
+	//셀렉트 박스
+	String sel1 = request.getParameter("sel1");
+	
+	//다중 셀렉트 박스
+	String[] sel2 = request.getParameterValues("sel2");
+	
+	//히든 태그
+	String txt4 = request.getParameter("txt4");
+	
+	String count = request.getParameter("count");
+	
+	//날짜
+	String regdate = request.getParameter("regdate");
+	
+	//범위
+	String min = request.getParameter("min");
+	
+	//색상 선택
+	String color = request.getParameter("color");
+	
+	//링크
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
 	
 %>    
 <!DOCTYPE html>
@@ -75,6 +100,32 @@
 	
 	<h2>라디오 버튼</h2>
 	<div><%=rb %></div>
+	
+	<h2>셀렉트 박스</h2>
+	<div><%=sel1 %></div>
+	
+	<h2>다중 셀렉트 박스</h2>
+	<div><%=Arrays.toString(sel2) %></div>
+	
+	<h2>히든 태그</h2>
+	<div><%=txt4 %></div>
+	
+	<h2>히든 태그</h2>
+	<div><%=count %></div>
+	
+	<h2>날짜</h2>
+	<div><%=regdate %></div>
+	
+	<h2>범위</h2>
+	<div><%=min %></div>
+	
+	<h2>색상 선택</h2>
+	<%-- <div><%=color %></div> --%>
+	<div style="background-color: <%= color %>"><%=color %></div>
+	
+	<h2>id, pw</h2>
+	<div><%=id %>, <%=pw %></div>
+	
 	
 	
 	
