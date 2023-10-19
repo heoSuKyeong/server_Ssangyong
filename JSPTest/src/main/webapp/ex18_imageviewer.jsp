@@ -55,9 +55,9 @@
 	
 	#list > .item > div:last-child {
 		position: absolute;
-		right:15px;
-		top:0px;
-		font-size: 1.2rem;
+		right:20px;
+		top:7px;
+		font-size: 1.5rem;
 		text-shadow: 0px 0px 1px #FFF;
 		display: none;
 		cursor: pointer;
@@ -82,14 +82,14 @@
 		</div>
 	</div>
 	 -->
-	
-	<% for(File file : list) {%> 
+	 
 	 <div id="list">
+		<% for(File file : list) {%> 
 		<div class="item">
 			<img src="pic/<%= file.getName()%>">
-			<div>&times;</div>
+			<div title="delete" onclick="deleteImage('<%= file.getName()%>')">&times;</div>
 		</div>
-	<%} %>
+		<%} %>
 	</div>
 	 
 	<form method="POST" action="ex18_imageviewer_ok.jsp" enctype="multipart/form=data">
@@ -109,7 +109,15 @@
 	<script src="http://pinnpublic.dothome.co.kr/cdn/example-min.js"></script>
 	
 	<script>
-	
+		function deleteImage(filename) {
+			alert(filename);
+			
+			if (confirm('delete?')) {
+				location.hfef = 'ex18_del.jsp?filename=dog.png' + filename;
+			}
+		}
+		
+		
 	</script>
 </body>
 </html>
