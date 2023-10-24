@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <%@ include file = "/WEB-INF/views/inc/asset.jsp" %>
 
+<link rel="stylesheet" href="http://pinnpublic.dothome.co.kr/cdn/example-min.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="http://pinnpublic.dothome.co.kr/cdn/example-min.js"></script>
 <style>
 
 </style>

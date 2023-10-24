@@ -17,7 +17,7 @@ import com.test.memo.repository.MemoDAO;
 @WebServlet("/addok.do")
 public class AddOk extends HttpServlet {
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		//AddOk.java
 		//1. 데이터 수신(name, pw, memo)
@@ -32,6 +32,7 @@ public class AddOk extends HttpServlet {
 		String memo = req.getParameter("memo");
 		
 		//2. DB 작업은 위임받는 클래스를 따로 만들어 작업한다 > DB 담당자: MemoDAO.java
+		//절대 서블릿에서 DB작업을 하지 않는다. 문제가 발생했을 때, DAO파일만 확인할 수 있게 담당을 확실하게 한다.
 		//Connection conn = null;
 		//PreparedStatement stat = null;
 		
@@ -46,7 +47,11 @@ public class AddOk extends HttpServlet {
 		
 		//dao.add(name, pw, memo);
 		//전송하는 데이터가 2개 이상이면 DTO에 담아서 전송한다.
-		dao.add(dto);
+		int result = dao.add(dto);
+		
+		
+		//3.
+		req.setAttribute("result", result);
 
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/addok.jsp");
 		dispatcher.forward(req, resp);
