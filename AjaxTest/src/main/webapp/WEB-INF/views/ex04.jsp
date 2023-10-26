@@ -84,18 +84,36 @@
 			$.ajax({
 				type: 'GET',
 				url: '/ajax/ex04data.do',
-				data: 'type=3',
+				//data: 'type=3',		//단일값
+				data: 'type=4',			//다중값
 				dataType: 'xml',
 				
 				/* xml이 result에 반환되었음 */
 				success: function(result) {
 					
-					//alret($(result).find('name').text());
+					/*
 					$('#result2').append('<div>번호: ' + $(result).find('seq').text() + '</div>');
 					$('#result2').append('<div>이름: ' + $(result).find('name').text() + '</div>');
 					$('#result2').append('<div>암호: ' + $(result).find('pw').text() + '</div>');
 					$('#result2').append('<div>메모: ' + $(result).find('memo').text() + '</div>');
 					$('#result2').append('<div>날짜: ' + $(result).find('regdate').text() + '</div>');
+					*/
+					
+					//alert($(result).text());
+					
+					//자바스크립트 forEach()와 동일하지만 item, index 위치가 다르다.
+					//자바스크립트 forEach((item,index) => {})
+					$(result).find('list>memo').each((index, item) => {
+						
+						$('#result2').append('<div>' + $(item).find('seq').text() + '</div>');
+						$('#result2').append('<div>' + $(item).find('name').text() + '</div>');
+						$('#result2').append('<div>' + $(item).find('pw').text() + '</div>');
+						$('#result2').append('<div>' + $(item).find('memo').text() + '</div>');
+						$('#result2').append('<div>' + $(item).find('regdate').text() + '</div>');
+						$('#result2').append('<hr>');
+						
+					});
+					
 					
 				},
 				error: function(a,b,c) {
@@ -106,7 +124,43 @@
 		});
 		
 		$('#btn3').click(function() {
+			//단일값
+			//다중값
 			
+			$.ajax({
+				type: 'GET',
+				url: '/ajax/ex04data.do',
+				//data: 'type=5',	//단일값
+				data: 'type=6',		//다중값
+				dataType: 'json',
+				
+				/* json이 result에 반환되었음 */
+				/* 이미 JSON이 자바스크립트 형태이기때문에 그대로 사용하면 된다. */
+				success: function(result) {
+					/*
+					$('#result3').append('<div>' + result.seq + '</div>');
+					$('#result3').append('<div>' + result.name + '</div>');
+					$('#result3').append('<div>' + result.pw + '</div>');
+					$('#result3').append('<div>' + result.memo + '</div>');
+					$('#result3').append('<div>' + result.regdate + '</div>');
+					*/
+					
+					$(result).each((index, memo) => {
+						//alert(memo.seq);
+						$('#result3').append('<div>' + memo.seq + '</div>');
+						$('#result3').append('<div>' + memo.name + '</div>');
+						$('#result3').append('<div>' + memo.pw + '</div>');
+						$('#result3').append('<div>' + memo.memo + '</div>');
+						$('#result3').append('<div>' + memo.regdate + '</div>');
+						$('#result3').append('<hr>');
+					});
+					
+					
+				},
+				error: function(a,b,c) {
+					console.log(a,b,c);
+				}
+			});
 		});
 	
 	</script>

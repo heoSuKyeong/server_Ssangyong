@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.test.ajax.model.CatDTO;
 import com.test.ajax.model.MemoDTO;
 
 public class AjaxDAO {
@@ -125,6 +126,78 @@ public class AjaxDAO {
 			e.printStackTrace();
 		}
 		
+		return null;
+	}
+
+	public int check(String id) {
+		
+		try {
+			
+			String sql = "select count(*) as cnt from tblUser where id=?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, id);
+			
+			rs = pstat.executeQuery();
+			
+			if (rs.next()) {
+				return rs.getInt("cnt");
+			}
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.check()");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+	
+	public void updatePosition(CatDTO dto) {
+		try {
+			
+			String sql = "update tblCat set x = ?, y = ? where catid = ?";
+			
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, dto.getX());
+			pstat.setString(2, dto.getY());
+			pstat.setString(3, dto.getCatid());
+			
+			pstat.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.updatePosition()");
+			e.printStackTrace();
+		}
+	}
+
+	public ArrayList<CatDTO> listCat() {
+		try {
+			
+			String sql = "select * from tblCat";
+			
+			stat = conn.createStatement();
+			rs = stat.executeQuery(sql);
+			
+			ArrayList<CatDTO> list = new ArrayList<CatDTO>();
+			
+			while (rs.next()) {
+				//레코드 1줄을 DTO 1개에 담기
+				CatDTO dto = new CatDTO();
+				dto.setSeq(rs.getString("seq"));
+				dto.setX(rs.getString("x"));
+				dto.setY(rs.getString("y"));
+				dto.setCatid(rs.getString("catid"));
+				
+				list.add(dto);
+			}
+			
+			return list;
+			
+		} catch (Exception e) {
+			System.out.println("AjaxDAO.listCat()");
+			e.printStackTrace();
+		}
 		return null;
 	}
 	

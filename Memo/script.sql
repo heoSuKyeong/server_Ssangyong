@@ -23,6 +23,9 @@ select * from tblMemo where seq = 1;
 update tblMemo set memo = '수정할 내용' where seq = 1;
 
 -- 메모 삭제
-delete from tblMemo where seq = 1;
+delete from tblMemo where seq = 28;
 
 commit;
+
+
+select * from tblUser;
