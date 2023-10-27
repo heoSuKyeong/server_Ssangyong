@@ -12,4 +12,3 @@ INDEX VERSION 1.4+C:\class\code\server\.metadata\.plugins\org.eclipse.wst.jsdt.c
 4098219142.index
 1825613931.index
 3770225493.index
-2753593782.index
