@@ -16,3 +16,11 @@ insert into tblCat values (5, 'cat5', 0, 0);
 commit;
 
 select * from tblCat;
+
+--ex08. Address
+select * from tblAddress;
+
+delete from tblAddress where seq=5;
+
+
+
