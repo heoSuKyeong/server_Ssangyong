@@ -9,4 +9,23 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- 요청이 들어오면 필터를 등록한다. -->
+  <filter>
+  	<!-- filter를 구분하기 위해 짓는 이름 -->
+  	<filter-name>encoding</filter-name>
+  	<!-- <filter-class>com.test.toy.filter.EncodingFilter</filter-class> -->
+  	<filter-class>com.test.toy.filter.EncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>encoding</filter-name>
+  	<!-- <url-pattern>필터 적용할 서블릿 가상 주소</url-pattern> -->
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
 </web-app>

@@ -15,15 +15,22 @@
 		<span>Project</span>
 	</h1>
 	<nav>
+	
+		<c:if test="${not empty id}">
+		<span style="font-size: 13px; color:#777; margin-right:10px;">${name}(${id})</span>
+		</c:if>
+	
 		<a href="/toy/index.do">Home</a> 
 		
 		<c:if test="${empty id}">
-		<a href="/toy/user/register.do">Register</a>
-		<a href="/toy/user/login.do">Login</a> 
+		<a href="/toy/user/register.do">Register</a>	<!-- 회원가입 -->
+		<a href="/toy/user/login.do">Login</a> 			<!-- 로그인 -->
 		</c:if>
 		
 		<c:if test="${not empty id}">
-		<a href="/toy/user/logout.do">Logout</a> 
+		<a href="/toy/user/info.do">Info</a> 				<!-- 회원 정보 -->
+		<a href="/toy/user/unregister.do">Unregister</a> 	<!-- 회원 탈퇴 -->
+		<a href="/toy/user/logout.do">Logout</a> 			<!-- 로그아웃 -->
 		</c:if>
 		
 		<a href="/toy/board/list.do">Board</a>

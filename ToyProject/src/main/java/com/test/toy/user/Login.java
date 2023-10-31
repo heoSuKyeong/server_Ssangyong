@@ -48,6 +48,7 @@ public class Login extends HttpServlet {
 		dto.setPw(pw);
 		
 		UserDTO result = dao.login(dto);
+		System.out.println(dto.getId());
 		
 		if (result != null) {
 			//로그인 성공
