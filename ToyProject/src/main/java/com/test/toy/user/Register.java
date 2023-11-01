@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.test.java.model.UserDTO;
+import com.test.java.user.model.UserDTO;
 import com.test.java.user.repository.UserDAO;
 
 @WebServlet("/user/register.do")

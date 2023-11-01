@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.java.model.UserDTO;
+import com.test.java.user.model.UserDTO;
 import com.test.java.user.repository.UserDAO;
 
 @WebServlet("/user/info.do")

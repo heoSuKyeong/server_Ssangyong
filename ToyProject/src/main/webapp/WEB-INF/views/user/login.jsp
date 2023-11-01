@@ -44,7 +44,7 @@
 		<div id="form-list">
 		<form method="POST" action="/toy/user/login.do">
 			<input type="hidden" name="id" value="susukkang">
-			<input type="hidden" name="pw" value="1234">
+			<input type="hidden" name="pw" value="1111">
 			<button type="submit" class="login primary">수수깡</button>
 		</form>
 		

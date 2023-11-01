@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import com.test.java.model.UserDTO;
+import com.test.java.user.model.UserDTO;
 import com.test.toy.DBUtil;
 
 public class UserDAO {

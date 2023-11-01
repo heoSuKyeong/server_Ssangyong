@@ -14,7 +14,7 @@
   <filter>
   	<!-- filter를 구분하기 위해 짓는 이름 -->
   	<filter-name>encoding</filter-name>
-  	<!-- <filter-class>com.test.toy.filter.EncodingFilter</filter-class> -->
+  	<!-- <filter-class>작성한 필터 파일 경로</filter-class> -->
   	<filter-class>com.test.toy.filter.EncodingFilter</filter-class>
   	<init-param>
   		<param-name>encoding</param-name>
@@ -25,6 +25,17 @@
   <filter-mapping>
   	<filter-name>encoding</filter-name>
   	<!-- <url-pattern>필터 적용할 서블릿 가상 주소</url-pattern> -->
+  	<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  
+  <!-- 권한 필터 -->
+  <filter>
+  	<filter-name>auth</filter-name>
+  	<filter-class>com.test.toy.filter.AuthFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>auth</filter-name>
   	<url-pattern>*.do</url-pattern>
   </filter-mapping>
   

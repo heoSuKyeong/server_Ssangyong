@@ -27,7 +27,7 @@
 			</tr>
 		</table>
 		<div>
-			<button type="button" class="back" onclick="location.href='/toy/board/list.do';">돌아보기</button>
+			<button type="button" class="back" onclick="location.href='/toy/board/list.do';">돌아가기</button>
 			<button type="submit" class="add primary">등록하기</button>
 		</div>
 		

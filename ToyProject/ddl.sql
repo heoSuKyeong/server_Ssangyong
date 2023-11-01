@@ -45,9 +45,7 @@ select
     end as regdate,
     (select name from tblUser where id = tblBoard.id) as name,
     case
-        when ((sysdate - regdate) / 24 / 60) < 30 then 1
+        when (sysdate - regdate) < 30 / 24 / 60 then 1
         else 0
-    end as isnew,
-    (sysdate - regdate) as reg
+    end as isnew
 from tblBoard order by seq desc;
-

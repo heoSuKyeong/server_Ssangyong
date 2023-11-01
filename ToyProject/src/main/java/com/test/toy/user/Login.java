@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.java.model.UserDTO;
+import com.test.java.user.model.UserDTO;
 import com.test.java.user.repository.UserDAO;
 
 @WebServlet("/user/login.do")
@@ -48,7 +48,6 @@ public class Login extends HttpServlet {
 		dto.setPw(pw);
 		
 		UserDTO result = dao.login(dto);
-		System.out.println(dto.getId());
 		
 		if (result != null) {
 			//로그인 성공
