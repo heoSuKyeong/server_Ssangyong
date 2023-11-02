@@ -25,6 +25,11 @@ public class Edit extends HttpServlet {
 		//2. DB작업(select) 위임
 		//3. 피드백
 		
+		if (Auth.check(req, resp)) {
+			//권한이 없으면 실행하지 않음
+			return;
+		}
+		
 		//1.
 		String seq = req.getParameter("seq");
 		

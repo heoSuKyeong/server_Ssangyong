@@ -19,6 +19,11 @@ public class Del extends HttpServlet {
 
 		//Del.java
 		
+		if (Auth.check(req, resp)) {
+			//권한이 없으면 실행하지 않음
+			return;
+		}
+		
 		//1. 데이터 수신(seq)
 		//2. jsp 호출
 		
