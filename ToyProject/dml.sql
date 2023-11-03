@@ -31,6 +31,13 @@ select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 1 a
 select count(*) from tblBoard;
 
 
+-- 댓글
+select * from tblComment;
+
+commit;
+
+
+
 
 
 

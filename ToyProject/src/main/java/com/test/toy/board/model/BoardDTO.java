@@ -18,6 +18,6 @@ public class BoardDTO {
 	//단, 테이블과 관계없는 데이터는 피한다.
 	private String name;
 	private int isnew;
-	
+	private int ccnt;
 }
 

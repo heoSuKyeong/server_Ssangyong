@@ -29,10 +29,16 @@
 	}
 	
 	#pagebar {
-	
 		text-align: center;
 		margin-bottom: 15px;
-		
+	}
+	
+	.comment-count {
+		font-size: 12px;
+	}
+	
+	.comment-count::before {
+		content: '..';
 	}
 	
 </style>
@@ -88,6 +94,13 @@
 				<td>
 					<!-- 주소로 객체는 넘길 수 없다. 변수의 값으로만 넘긴다. -->
 					<a href="/toy/board/view.do?seq=${dto.seq}&search=${map.search}&column=${map.column}&word=${map.word}">${dto.subject}</a>
+					
+					<!-- 댓글 수 --> 
+					<c:if test="${dto.ccnt > 0}">
+					<span class="comment-count">${dto.ccnt}</span>
+					</c:if>
+					
+					<!-- 새로운 글 마크 -->
 					<c:if test="${dto.isnew == 1}">
 					<span class="is-new">new</span>
 					</c:if>

@@ -42,7 +42,7 @@ public class Del extends HttpServlet {
 		//DelOk.java
 		
 		//1. 데이터 수신(seq)
-		//2. DB작업(delete) 위임
+		//2. DB작업(delete) 위임 + 게시물에 달린 댓글 삭제
 		//3. 피드백
 		
 		//1.
@@ -50,6 +50,9 @@ public class Del extends HttpServlet {
 		
 		//2.
 		BoardDAO dao = new BoardDAO();
+		
+		//댓글 삭제
+		dao.delCommentAll(seq);
 		
 		int result = dao.del(seq);
 
