@@ -37,7 +37,11 @@ select * from tblComment;
 commit;
 
 
+-- 마커
+select * from tblMarker;
 
+-- 장소
+select * from tblPlace;
 
 
 

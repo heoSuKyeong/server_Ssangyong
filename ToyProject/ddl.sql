@@ -70,11 +70,28 @@ commit;
 
 
 
+-- 마커 저장 테이블
+create table tblMarker (
+    seq number primary key,     -- PK
+    lat number not null,        -- 위도
+    lng number not null         -- 경도
+);
+
+create sequence seqMarker;
+
+commit;
 
 
+-- 장소 테이블
+create table tblPlace (
+    seq number primary key,     -- PK
+    lat number not null,        -- 위도
+    lng number not null,         -- 경도
+    name varchar2(100) not null,        -- 장소명
+    category varchar2(100) default 'default' not null       -- 장소분류
+);
 
-
-
+create sequence seqPlace;
 
 
 
