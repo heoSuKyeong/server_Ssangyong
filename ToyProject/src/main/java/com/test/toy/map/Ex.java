@@ -30,6 +30,11 @@ public class Ex extends HttpServlet {
 			
 			req.setAttribute("list", list);
 			
+		} else if (no.equals("05")) {
+			MapDAO dao = new MapDAO();
+			
+			ArrayList<PlaceDTO> list = dao.listPlace();
+			req.setAttribute("list", list);
 		}
 		
 
