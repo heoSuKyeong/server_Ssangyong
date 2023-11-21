@@ -22,7 +22,7 @@
 		vertical-align: middle;		/* 테이블 td에만 적용되는 속성 */
 	}
 	
-	#intfo th:nth-child(2), #info th:nth-child(4) {
+	#info th:nth-child(2), #info th:nth-child(4) {
 		width: 90px;
 	}
 	

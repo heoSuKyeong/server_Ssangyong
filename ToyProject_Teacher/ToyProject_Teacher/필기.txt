@@ -1,0 +1,192 @@
+새 프로젝트
+- New > Dynamic Web Project > "ToyProject" > Context root: "toy" > web.xml 체크O
+
+주제
+1. 게시판
+2. 회원 관리(인증)
+3. 기타 등..
+4. 프로젝트 경험
+
+
+요구분석
+- 익숙
+
+
+전체 구성(페이지 관계도)
+- draw.io
+
+
+화면 설계 & 스토리 보드
+- 생략
+
+
+데이터베이스
+- ERD
+- ToyProject > "ddl.sql"
+			 > "dml.sql"
+
+
+구현
+- 패키지
+	1. com.test.toy: 메인 패키지
+	2. com.test.toy.user: 회원
+	3. com.test.toy.user.repository: DB
+	4. com.test.toy.user.model: DB
+	5. com.test.toy.board: 게시판
+	6. com.test.toy.board.repository: DB
+	7. com.test.toy.board.model: DB
+	8. com.test.toy.filter: 필터
+- 파일
+	1. com.test.toy
+		- Index.java: 시작 페이지
+		- Template.java: 템플릿 페이지	
+		- DBUtil.java
+	2. com.test.toy.user
+		- Register.java: 회원 가입
+		- Unregister.java: 회원 탈퇴
+		- Login.java: 로그인
+		- Logout.java: 로그아웃
+		- Info.java: 회원 정보
+	3. com.test.toy.user.repository
+		- UserDAO.java
+	4. com.test.toy.user.model
+		- UserDTO.java
+	5. com.test.toy.board
+		- List.java: 목록보기
+		- Add.java: 글쓰기
+		- View.java: 글보기
+		- Edit.java: 수정
+		- Del.java: 삭제
+		- Auth.java: 권한 확인
+		- Dummy.java: 더미 데이터
+		- Comment.java: 댓글
+		- DelComment.java: 댓글 삭제
+		- EditComment.java: 댓글 수정
+	6. com.test.toy.board.repository
+		- BoardDAO.java
+	7. com.test.toy.board.model
+		- BoardDTO.java
+		- CommentDTO.java
+	8. com.test.toy.filter
+		- EncodingFilter.java
+		- AuthFilter.java
+- 뷰
+	1. views
+		a. 루트
+			- index.jsp: 시작 페이지
+			- template.jsp: 템플릿 페이지
+		b. user
+			- register.jsp: 회원 가입
+			- unregister.jsp: 회원 탈퇴
+			- login.jsp: 로그인
+			- info.jsp: 회원 정보
+		c. inc	
+			- asset.jsp: CSS, JS
+			- header.jsp
+		d. board
+			- list.jsp
+			- add.jsp
+			- view.jsp
+			- edit.jsp
+			- del.jsp
+			
+- 라이브러리
+	- lib
+		- ojdbc6.jar
+		- jstl-1.2.jar
+		- cos.jar
+		- json-simple-1.1.1.jar
+		- lombok.jar
+
+- 클라이언트 라이브러리
+	- webapp > asset > css > toy.css
+
+- 프로필 사진 경로
+	- webapp > asset > pic
+
+
+기본 페이지(=레이아웃)
+- Template.java
+- template.jsp
+
+
+
+Favicon
+- Favorite icon
+- icon 파일 필요(*.ico) > "favicon.ico"
+- webapp > asset > favicon.ico
+
+
+
+
+게시판 CRUD
+
+
+
+권한 처리
+- 목록보기, 상세보기 > 비회원(O), 회원(O)
+- 글쓰기, 수정하기, 삭제하기 > 비회원(X), 회원(O)
+- 수정하기, 삭제하기 > 비회원(X), 회원(선택적 > 자기글만 가능)
+- 수정하기, 삭제하기 > 관리자(모든글에 가능)
+
+
+----------------------------------------------------------
+
+
+검색하기
+
+
+
+
+페이징
+- 다량의 게시물 > 한 화면 출력 불편 > 가상의 페이지 분할 > 나눠서 출력 행위
+
+
+
+
+댓글
+
+
+
+
+-----------------------------------------------------
+
+Open API > map
+- Google Map
+- Naver Map
+- Kakao Map
+
+
+Kakao Map API 
+- https://apis.map.kakao.com/web/guide/
+
+카카오 개발자 센터
+- https://developers.kakao.com/ > 회원 가입 or 로그인
+
+
+- "com.test.toy.map" > "Ex.java"
+					 > "MapDAO.java"
+					 > "MapDTO.java"
+					 > "AddMarker.java"
+					 
+					 > "AddPlace.java"
+					 > "ListPlace.java"
+					 > "DelPlace.java"
+					 > "PlaceDTO.java"
+
+- views > "map" > "ex01.jsp"
+				> "ex02.jsp"
+				> "ex03.jsp"
+				> "ex04.jsp"
+				> "ex05.jsp"
+ 
+
+
+
+
+
+
+
+
+
+

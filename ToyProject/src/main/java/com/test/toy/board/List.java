@@ -64,6 +64,7 @@ public class List extends HttpServlet {
 		//list.do?page=1 로 요청하면 DB에선 where rnum between 1 and 10 으로 처리해야한다.
 		begin = ((nowPage -1) * pageSize) +1;
 		end = begin + pageSize -1;
+		
 		map.put("begin", begin+"");
 		map.put("end",  end+"");
 		
